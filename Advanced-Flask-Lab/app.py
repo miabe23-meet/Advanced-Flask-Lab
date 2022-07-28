@@ -1,6 +1,5 @@
 from flask import Flask, jsonify, request, render_template, url_for
 import random
-import requests, json
 
 app = Flask(  # Create a flask app
     __name__,
@@ -25,7 +24,7 @@ posts = {
 
 @app.route('/')  # '/' for the default page
 def home():
-    return render_template('index.html')
+    return render_template('index.html', image_link=image_link ,user_bio=user_bio , posts=posts)
 
 
 @app.route('/about')  # '/' for the default page
